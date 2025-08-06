@@ -9,8 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.17",
     "@vue/compat": "^3.4.0",
+    "axios": "^1.11.0",
+    "vue": "^3.5.17",
     "vue2-datepicker": "^3.11.1"
   },
   "devDependencies": {

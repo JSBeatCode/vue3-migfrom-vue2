@@ -5,6 +5,8 @@ import App from './App.vue'
 import DatePicker from 'vue2-datepicker'
 import 'vue2-datepicker/index.css'
 
+import sharedLib from 'shared-lib'
+
 const app = createApp(App)
 
 // vue2 API 허용 및 경고 설정
@@ -22,5 +24,7 @@ app.config.globalProperties.$formatDate = function(date) {
 };
 
 app.component('DatePicker', DatePicker);
+
+app.use(sharedLib);
 
 app.mount('#app')

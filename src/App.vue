@@ -2,6 +2,14 @@
   <div id="app">
     <div class="container">
       <div>
+        <h1>App-Service</h1>
+        <MyButton @click="sayHello">Click Me</MyButton>
+        <MyCard>
+          <p>This is inside MyCard</p>
+          <input v-focus />
+        </MyCard>
+      </div>
+      <div>
         <h1>Vue3 + Vite + vue2-datepicker</h1>
         <DatePicker v-model="selectedDate" />
         <p>선택된 날짜: {{ selectedDate }}</p>
@@ -130,6 +138,10 @@ export default {
         default:
           return '할 일을 추가해보세요!';
       }
+    },
+    sayHello() {
+      console.log('jsdno0 debug1-1');
+      this.$hello?.()
     }
   }
 };
