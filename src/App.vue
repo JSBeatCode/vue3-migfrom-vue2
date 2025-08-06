@@ -40,8 +40,8 @@ import TodoInput from './components/TodoInput.vue';
 import TodoFilter from './components/TodoFilter.vue';
 import TodoList from './components/TodoList.vue';
 import TodoStats from './components/TodoStats.vue';
-import DatePicker from 'vue2-datepicker'
-import 'vue2-datepicker/index.css'
+// import DatePicker from 'vue2-datepicker'
+// import 'vue2-datepicker/index.css'
 
 export default {
   name: 'App',
@@ -50,7 +50,7 @@ export default {
     TodoFilter,
     TodoList,
     TodoStats,
-    DatePicker
+    // DatePicker
   },
   data() {
     return {
