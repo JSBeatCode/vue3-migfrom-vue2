@@ -1,5 +1,6 @@
 import { createElementBlock, openBlock, Fragment, createCommentVNode, createElementVNode, renderSlot } from 'vue';
 import axios from 'axios';
+import { createI18n } from 'vue-i18n';
 
 var script$1 = {
   name: 'MyButton',
@@ -84,6 +85,23 @@ async function send(url, data = {}, config = {}) {
   }
 }
 
+// 기본 메시지 예시
+const messages = {
+  en: {
+    welcome: 'Welcome!'
+  },
+  ko: {
+    welcome: '환영합니다!'
+  }
+};
+const i18n = createI18n({
+  legacy: false,
+  // Composition API 모드
+  locale: 'en',
+  fallbackLocale: 'en',
+  messages
+});
+
 var plugin = {
   install(app) {
     // 전역 컴포넌트 등록
@@ -96,6 +114,20 @@ var plugin = {
 
     // 전역 메서드 등록
     app.config.globalProperties.$send = send;
+
+    // i18n 플러그인 등록
+    app.use(i18n);
+
+    // i18n 헬퍼 함수 전역 등록
+    app.config.globalProperties.$setLocale = locale => {
+      i18n.global.locale.value = locale;
+    };
+    app.config.globalProperties.$hasLocaleMessage = locale => {
+      return Object.prototype.hasOwnProperty.call(i18n.global.messages.value, locale);
+    };
+    app.config.globalProperties.$mergeLocaleMessage = (locale, message) => {
+      i18n.global.mergeLocaleMessage(locale, message);
+    };
   }
 };
 

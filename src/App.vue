@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div class="container">
+      <button class="my-btn">{{ $t('welcome') }}</button>
       <div>
         <h1>App-Service</h1>
         <MyButton @click="sayHello">Click Me</MyButton>
