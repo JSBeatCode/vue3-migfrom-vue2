@@ -7,7 +7,9 @@ import 'vue2-datepicker/index.css'
 
 import sharedLib from 'shared-lib'
 
-const app = createApp(App)
+import { app } from './app-instance';
+
+// const app = createApp(App)
 
 // vue2 API 허용 및 경고 설정
 app.config.compatConfig = {
